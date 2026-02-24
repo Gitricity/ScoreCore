@@ -32,7 +32,7 @@ The goal (pun intended) was to design a scoreboard system that wouldn't break th
 
 
 
-
+---
 
 ## 📜 License
 
