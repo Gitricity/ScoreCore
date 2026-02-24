@@ -2,9 +2,31 @@
 ScoreCore is a modular LED scoreboard system based on an ESP8266, featuring custom-designed driver boards and segment panels. Open design, non-commercial license.
 
 
+# The idea💡
 
+The Idea of ScoreCore was born after three electronics trainees from germany decided to design and build a modular, low cost scoreboard for a local football club.
+The goal (pun intended) was to design a scoreboard system that wouldn't break the bank, be easy to use and modular so everything could be easily switched out for a easy repair or extended if that was needed.
 
+  ## The first version
+  The first version was put together with simple materials we either had laying arround or could by online.
+  It was based arround an Arduino Mega together with a custom 3,3V in 12V out LED Driver to drive the LED and an ESP8266 paired with a RTC for the UI
+  and time keeping.
 
+  The Hardware was made out of wood and PVC panels with LED strips attached as the seven-segment-displays.
+  Over time we noticed that this would work for the first version but if we wanted to build this project again, we would need to make the design both
+  simpler and more efficient. 
+  
+  That's when we started
+
+  ## Version Two
+
+  The goals for V2 were simple. Make the design simpler, more efficient and maybe even cheaper than the first version.
+  V2 started with a bunch of designs. First modular drivers, than plug-in ones but ultimately we setteled on a version that was mounted directly to
+  the 7 segment displays, connects via an XT90(2+2) connector and communicates to the controller over I²C.
+  Same for the Controller. First there was one that connected over RJ45 Connectors, then one where the drivers could plug in but ultimately we decided
+  on one that took a XT90(2+2) for input power and more XT90(2+2) for the outputs.
+  
+  These changes kept the modularity of the system, but shrunk down the sice drasticly.🥳
 
 
 
