@@ -1,0 +1,124 @@
+
+body{
+  font-family: Arial, sans-serif;
+  color:rgb(255, 255, 255);
+  background: #222831;
+  margin:20px;
+}
+
+/* Row Styling */
+
+.singlerow{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
+.multirow{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px
+}
+
+/* Grid Layout */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+/* Card Styling */
+.card{
+  background:#31363F;
+  border-radius:14px;
+  padding:18px;
+  box-shadow:0 4px 12px rgba(0,0,0,.1);
+}
+
+.label{
+  font-size:14px;
+  opacity:.6;
+  margin-bottom:12px;
+}
+
+.formRow{
+  display:grid;
+  grid-template-columns: 1fr 120px;
+  align-items:center;
+  gap:14px;
+
+  padding:10px 14px;
+  margin-top:12px;
+
+  border-radius:12px;
+  background: rgba(255,255,255,0.03);
+}
+
+.formRow label{
+  font-size:14px;
+  opacity:.8;
+}
+
+.formRow input[type="number"]{
+  width:100% - 8px;
+  padding:10px 12px;
+
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.08);
+
+  background: rgba(0,0,0,0.25);
+  color:#fff;
+
+  font-size:16px;
+  text-align:center;
+  outline:none;
+  transition:.15s;
+}
+
+.formRow input[type="number"]:focus{
+  border-color:#2e7d32;
+  box-shadow:0 0 0 3px rgba(46,125,50,.25);
+}
+
+/* Button Styling */
+button{
+  background: #ffffff;
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:12px;
+  font-size:18px;
+  cursor:pointer;
+  transition:.15s;
+}
+
+/*Toggle Button State Colors */
+.on{
+  background:#2e7d32;
+  color:#ffffff;
+}
+
+.off{
+  background:#b71c1c;
+  color:#fff;
+}
+
+/*Momentary Button State Colors */
+.inactive{
+  background:#393E46;
+  color:#fff;
+}
+
+.active{
+  background:#2e7d32;
+  color:#fff;
+}
+
+button {
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+
+button:active {
+  transform: scale(.98);
+  box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.25);
+}

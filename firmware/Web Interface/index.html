@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1" charset="UTF-8">
+<!-- <meta http-equiv="refresh" content="3" > -->
+<title>ScoreCore UI Test</title>
+
+<!--
+  Color Palette
+  Background: #222831
+  Primary:  #31363F
+  Secondary:  
+  Accent: #8A244B
+  ON/Active: #2e7d32
+  OFF/Inactive: #b71c1c
+-->
+
+<!--Style Block was here-->
+
+<!--Momentary Script was here-->
+
+<!--Momentary Script was here-->
+
+<!--Counter Logic was here-->
+
+<!--Countdown was here-->
+
+<!--game Time was here-->
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<script defer src="/assets/scripts/toggle_buttons.js"></script>
+<script defer src="/assets/scripts/momentary_buttons.js"></script>
+<script defer src="/assets/scripts/counter_logic.js"></script>
+<script defer src="/assets/scripts/countdown.js"></script>
+<script defer src="/assets/scripts/game_time.js"></script>
+
+</head>
+<body>
+
+<h1>ScoreCore UI Test</h1>
+
+<div class="singlerow" style="margin-top:12px"> <!-- Panel power switch -->
+
+      <div class="card">
+        <div class="label">Anzeige An</div>
+        <button class="off"
+               data-state="0"
+                onclick="toggle(this,'PWR')">
+          OFF
+        </button>
+      </div>
+
+</div>
+
+<div class="multirow" style="margin-top:12px"> <!-- Debug Buttons -->
+
+      <div class="card">
+         <div class="label">Testmodus (Taster)</div>
+            <button class="inactive"
+                    onpointerdown="press(this,'HORN')"
+                    onpointerup="release(this,'HORN')"
+                    onpointercancel="release(this,'HORN')"
+                    onpointerleave="release(this,'HORN')">
+              Test
+            </button>
+      </div>
+
+      <div class="card">
+         <div class="label">Alle Segmente an (Taster)</div>
+            <button class="inactive"
+                    onpointerdown="press(this,'HORN')"
+                    onpointerup="release(this,'HORN')"
+                    onpointercancel="release(this,'HORN')"
+                    onpointerleave="release(this,'HORN')">
+              Test
+            </button>
+      </div> 
+
+</div>
+
+<div class="multirow" style="margin-top:12px"> <!-- Score Buttons -->
+
+    <div class="card"> <!-- Home Score-->
+      <div class="label">Heim</div>
+      <div id=scH class=score>0</div>
+      <div class=bar>
+        <button class=on onclick="bump('H',+1,this)">+ 1</button>
+        <button class=off onclick="bump('H',-1,this)">− 1</button>
+        <button class=inactive onclick="setScore('H',0,this)">Reset</button>
+      </div>
+    </div>
+
+    <div class="card"> <!-- Guest Score-->
+      <div class="label">Gast</div>
+      <div id=scG class=score>0</div>
+      <div class=bar>
+        <button class=on onclick="bump('G',+ 1,this)">+ 1</button>
+        <button class=off onclick="bump('G',- 1,this)">− 1</button>
+        <button class=inactive onclick="setScore('G',0,this)">Reset</button>
+      </div>
+    </div>
+  </div>
+
+<div class="card" style="margin-top:12px"> <!-- Countdown Controlls -->
+
+    <div class="label">Spielbeginn</div>
+    <div class="grid3">
+      <span>Zeit</span>
+      <input id=when type=time value="15:30" step="60">
+      <button class=on onclick="startCD(this)">Start</button>
+      <button class=off onclick="stopCD(this)">Stop</button>
+    </div>
+    <div class=tiny>Info: Der Countdown zählt bis 5 Minuten vor Spielbeginn</div>
+
+</div>
+
+<div class="card" style="margin-top:12px"> <!-- Game Time Controlls-->
+    <div class="label">Spieluhr</div>
+    <div class="multirow">
+      <button class=on onclick="gmStart(this)">Spiel starten</button>
+      <button class=inactive onclick="gmResume(this)">Fortsetzen</button>
+    </div>
+    <div class="multirow" style="margin-top:8px">
+      <button class=off onclick="gmStop(this)">Stop</button>
+      <button class=inactive onclick="gmCfg(this)">Übernehmen</button>
+      <div></div>
+    </div>
+    <div class="formRow">
+      <label for="halfTime">Halbzeit (Min)</label>
+      <input id="halfTime" type="number" min="0" value="45">
+    </div>
+
+    <div class="formRow">
+      <label for="fullTime">Spielende (Min)</label>
+      <input id="fullTime" type="number" min="0" value="90">
+    </div>
+
+    <div class=tiny>Automatische Pause bei „Halbzeit“, Ende bei „Spielende“.</div>
+</div>
+
+</body>
+</html>
